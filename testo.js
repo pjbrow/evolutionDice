@@ -8,6 +8,7 @@ function setCharAt(str,index,chr) {
     return str.substr(0,index) + chr + str.substr(index+1);
 }
 
+
 function createTargetString(){
 
         targetString="";
@@ -20,6 +21,24 @@ function createTargetString(){
             }
             return targetString;
 }
+
+
+function createRandomString(){
+
+        randomString = "";
+
+
+        for ( var i=0; i < targetString.length; i++ ) {
+
+            var rnum = Math.floor(Math.random() * possibleCharacters.length);
+            randomString += possibleCharacters.substring(rnum,rnum+1);
+
+            }
+
+        return randomString;
+
+}
+
 
 function loopCheckReplace(){
 
@@ -74,14 +93,7 @@ for (var targetLength = 2; targetLength < max_string_length; targetLength++){
 
         do {
 
-        var randomString = "";
-
-        for ( var i=0; i < targetString.length; i++ ) {
-
-            var rnum = Math.floor(Math.random() * possibleCharacters.length);
-            randomString += possibleCharacters.substring(rnum,rnum+1);
-
-            }
+        var randomString = createRandomString();
 
         var counter = counter + 1;
 

@@ -82,8 +82,8 @@ function getAverageGenerations(){
 
     var add = 0;
 
-    for (var u = 0; u < results.length; u++){
-        add = add + results[u];
+    for (var u = 0; u < generationsRequiredResults.length; u++){
+        add = add + generationsRequiredResults[u];
     }
 
     return add / u;
@@ -117,7 +117,7 @@ for (var targetLength = 2; targetLength < maximumStringLength; targetLength++){
 
     targetString = createTargetString();
 
-    var results = [];
+    var generationsRequiredResults = [];
 
     for (var r = 0; r < numberOfTrials; r++){
 
@@ -135,7 +135,7 @@ for (var targetLength = 2; targetLength < maximumStringLength; targetLength++){
 
         } while (targetString != progressString);
 
-    results[r] = counter;
+    generationsRequiredResults[r] = counter;
 
     }
 

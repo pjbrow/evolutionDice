@@ -119,11 +119,15 @@ for (var targetLength = 2; targetLength < maximumStringLength; targetLength++){
 
     var generationsRequiredResults = [];
 
+    // This loop continues until the number of trials is complete.
+
     for (var r = 0; r < numberOfTrials; r++){
 
         var counter = 0;
 
         var progressString = createProgressString();
+
+        // Trial Loop continues until progress string equals the target string.
 
         do {
 
@@ -139,8 +143,12 @@ for (var targetLength = 2; targetLength < maximumStringLength; targetLength++){
 
     }
 
-    var average = getAverageGenerations();
+    var averageGenerations = getAverageGenerations();
 
-    console.log(targetLength + ", " + average);
+    // Prints the number of characters for target string and the average number
+    // of generations required to get there for that number of characters.
+    // Prints out from server logs so it's easy to copy and paste to *.csv file.
+
+    console.log(targetLength + ", " + averageGenerations);
 
 }

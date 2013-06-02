@@ -1,5 +1,8 @@
 // SPLICE IN MATCHING DATA
 
+console.log("TEST 10,000 x 10,000");
+console.log("");
+
 function setCharAt(str,index,chr) {
     if(index > str.length-1) return str;
     return str.substr(0,index) + chr + str.substr(index+1);

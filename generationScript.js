@@ -82,10 +82,11 @@ function loopCheckReplace(){
 
 var possibleCharacters = " abcdefghiklmnopqrstuvwxyz";
 
+// Variable specifies the length of the target string.
+
 var targetLength = 20;
 
 targetString = createTargetString();
-
 
 // for (var r = 0; r < numberOfTrials; r++){
 

@@ -5,9 +5,7 @@ function setCharAt(str,index,chr) {
     return str.substr(0,index) + chr + str.substr(index+1);
 }
 
-
-
-var max_characters = 1000;
+var max_characters = 10000;
 
 for (var x = 2; x < max_characters; x++){
 

@@ -93,8 +93,6 @@ for (var targetLength = 2; targetLength < maximumStringLength; targetLength++){
 
     targetString = createTargetString();
 
-    // SCRIPT
-
     var results = [];
 
     for (var r = 0; r < numberOfTrials; r++){

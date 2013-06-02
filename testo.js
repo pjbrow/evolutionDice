@@ -68,31 +68,38 @@ function loopCheckReplace(){
 
 }
 
+function getAverageGenerations(){
+
+    var add = 0;
+
+    for (var u = 0; u < results.length; u++){
+        add = add + results[u];
+    }
+
+    return add / u;
+}
+
 
 // SPLICE IN MATCHING DATA
 
+var maximumStringLength = 10000;
 
-var max_string_length = 10000;
+var numberOfTrials = 10000;
 
-for (var targetLength = 2; targetLength < max_string_length; targetLength++){
+var possibleCharacters = " abcdefghiklmnopqrstuvwxyz";
 
-    // VARIABLES
 
-    var possibleCharacters = " abcdefghiklmnopqrstuvwxyz";
+for (var targetLength = 2; targetLength < maximumStringLength; targetLength++){
 
     targetString = createTargetString();
-
-    var number_of_tests = 10000;
-
 
     // SCRIPT
 
     var results = [];
 
-    for (var r = 0; r < number_of_tests; r++){
+    for (var r = 0; r < numberOfTrials; r++){
 
         var progressString = createProgressString();
-
 
         var counter = 0;
 
@@ -110,18 +117,7 @@ for (var targetLength = 2; targetLength < max_string_length; targetLength++){
 
     }
 
-    // console.log("Experiment run " + r + " times");
-    // console.log(results);
-
-    var add = 0;
-
-    for (var u = 0; u < results.length; u++){
-        add = add + results[u];
-    }
-
-    average = add / u;
-
-    // console.log("Average is " + average);
+    var average = getAverageGenerations();
 
     var outcome = {
         number_of_characters: targetLength,
@@ -132,10 +128,3 @@ for (var targetLength = 2; targetLength < max_string_length; targetLength++){
     console.log(outcome.number_of_characters + ", " + outcome.generations_required);
 
 }
-
-console.log("***********");
-console.log("STATISTICS");
-console.log("Ran each experiment " + number_of_tests + " times.");
-
-
-

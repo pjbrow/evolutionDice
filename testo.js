@@ -21,7 +21,23 @@ function createTargetString(){
             return targetString;
 }
 
+function loopCheckReplace(){
 
+    for (var p = 0; p < targetString.length; p++) {
+
+    var first_char = randomString.slice(p, p+1);
+
+    var second_char = targetString.slice(p, p+1);
+
+    if (first_char === second_char) {
+
+        progressString = setCharAt(progressString, p, second_char);
+
+        }
+
+    }
+
+}
 
 
 
@@ -75,19 +91,7 @@ for (var targetLength = 2; targetLength < max_string_length; targetLength++){
         // console.log("select: " + message);
         // console.log("random: " + randomString);
 
-        for (var p = 0; p < targetString.length; p++) {
-
-            var first_char = randomString.slice(p, p+1);
-
-            var second_char = targetString.slice(p, p+1);
-
-            if (first_char === second_char) {
-
-                progressString = setCharAt(progressString, p, second_char);
-
-                }
-
-            }
+        loopCheckReplace();
 
         // console.log("update: " + progressString);
         // console.log("");

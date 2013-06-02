@@ -40,7 +40,6 @@ function loopCheckReplace(){
 }
 
 
-
 // SPLICE IN MATCHING DATA
 
 
@@ -85,20 +84,10 @@ for (var targetLength = 2; targetLength < max_string_length; targetLength++){
             }
 
         var counter = counter + 1;
-        // console.log("");
-        // console.log("Generation " + counter + " (Test " + r + ")");
-
-        // console.log("select: " + message);
-        // console.log("random: " + randomString);
 
         loopCheckReplace();
 
-        // console.log("update: " + progressString);
-        // console.log("");
         } while (targetString != progressString);
-
-        // console.log(message.length + " characters");
-        // console.log(counter + " generations");
 
     results[r] = counter;
 

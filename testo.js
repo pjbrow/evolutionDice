@@ -1,13 +1,15 @@
 /// BROKEN OUT FUNCTIONS
 
 
-// This function replaces a character if a match is found
+// Function replaces character in progress string if a match is found
+// between the random string and the target string.
 
 function setCharAt(str,index,chr) {
     if(index > str.length-1) return str;
     return str.substr(0,index) + chr + str.substr(index+1);
 }
 
+// Function creates a target string for each trial.
 
 function createTargetString(){
 
@@ -22,6 +24,8 @@ function createTargetString(){
             return targetString;
 }
 
+// Function creates a random string to compare to the target string
+// for each generation.
 
 function createRandomString(){
 
@@ -39,6 +43,7 @@ function createRandomString(){
 
 }
 
+// Function creates the progress string of empty characters
 
 function createProgressString(){
     var progressString = "";
@@ -49,6 +54,8 @@ function createProgressString(){
     return progressString;
 }
 
+// Function loops through target string and compares each character
+// to the random string.  Replaces character on progress string if match.
 
 function loopCheckReplace(){
 
@@ -68,6 +75,9 @@ function loopCheckReplace(){
 
 }
 
+// Function gets an average of the number of generations required for the trials
+// to get from the progress string to the target string.
+
 function getAverageGenerations(){
 
     var add = 0;
@@ -80,14 +90,28 @@ function getAverageGenerations(){
 }
 
 
-// SPLICE IN MATCHING DATA
+// VARIABLES FOR EXPERIMENT
+
+// Variable sets the number of characters for the strings to be tested.
+// Begins at 2 and ends at maximum number.
 
 var maximumStringLength = 10000;
 
+// Variable sets the number of trials to generate an average number of
+// generations to get to the target string.
+
 var numberOfTrials = 10000;
+
+// Variable sets the characters that are used to generate the target
+// string and also the random string for each generation.
 
 var possibleCharacters = " abcdefghiklmnopqrstuvwxyz";
 
+
+// SCRIPT
+
+// Loop begins experiments at a string of two characters and continues up
+// to the maximum string length specified for the overall experiment.
 
 for (var targetLength = 2; targetLength < maximumStringLength; targetLength++){
 

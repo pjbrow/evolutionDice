@@ -119,12 +119,6 @@ for (var targetLength = 2; targetLength < maximumStringLength; targetLength++){
 
     var average = getAverageGenerations();
 
-    var outcome = {
-        number_of_characters: targetLength,
-        generations_required: average,
-        array_of_results: results
-        };
-
-    console.log(outcome.number_of_characters + ", " + outcome.generations_required);
+    console.log(targetLength + ", " + average);
 
 }

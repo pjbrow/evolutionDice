@@ -121,15 +121,15 @@ for (var targetLength = 2; targetLength < maximumStringLength; targetLength++){
 
     for (var r = 0; r < numberOfTrials; r++){
 
-        var progressString = createProgressString();
-
         var counter = 0;
+
+        var progressString = createProgressString();
 
         do {
 
-        var randomString = createRandomString();
-
         var counter = counter + 1;
+
+        var randomString = createRandomString();
 
         loopCheckReplace();
 

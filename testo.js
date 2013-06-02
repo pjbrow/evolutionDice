@@ -1,6 +1,7 @@
 // SPLICE IN MATCHING DATA
 
 console.log("TEST 10,000 x 10,000");
+console.log("2 June 2013, 12:03");
 console.log("");
 
 function setCharAt(str,index,chr) {

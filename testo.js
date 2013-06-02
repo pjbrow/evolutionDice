@@ -40,6 +40,16 @@ function createRandomString(){
 }
 
 
+function createProgressString(){
+    var progressString = "";
+
+        for (var c=0; c < targetString.length; c++) {
+            progressString = progressString + "*";
+        }
+    return progressString;
+}
+
+
 function loopCheckReplace(){
 
     for (var p = 0; p < targetString.length; p++) {
@@ -81,13 +91,8 @@ for (var targetLength = 2; targetLength < max_string_length; targetLength++){
 
     for (var r = 0; r < number_of_tests; r++){
 
-        var randomString = "";
-        var progressString = "";
+        var progressString = createProgressString();
 
-
-        for (var c=0; c < targetString.length; c++) {
-            progressString = progressString + "*";
-        }
 
         var counter = 0;
 

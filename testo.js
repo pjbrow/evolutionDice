@@ -8,7 +8,18 @@ function setCharAt(str,index,chr) {
     return str.substr(0,index) + chr + str.substr(index+1);
 }
 
-function createTargetString(){}
+function createTargetString(){
+
+        targetString="";
+
+        for ( var n=0; n < targetLength; n++ ) {
+
+            var rnum = Math.floor(Math.random() * possibleCharacters.length);
+            targetString += possibleCharacters.substring(rnum,rnum+1);
+
+            }
+            return targetString;
+}
 
 
 
@@ -25,15 +36,7 @@ for (var targetLength = 2; targetLength < max_string_length; targetLength++){
 
     var possibleCharacters = " abcdefghiklmnopqrstuvwxyz";
 
-    targetString = "";
-
-    for ( var n=0; n < targetLength; n++ ) {
-
-            var rnum = Math.floor(Math.random() * possibleCharacters.length);
-            targetString += possibleCharacters.substring(rnum,rnum+1);
-
-            }
-
+    targetString = createTargetString();
 
     var number_of_tests = 10000;
 

@@ -104,10 +104,10 @@ targetString = createTargetString();
 
     loopCheckReplace();
 
-    console.log("GENERATION" + counter);
-    console.log(targetString);
-    console.log(randomString);
-    console.log(progressString);
+    console.log("GENERATION " + counter);
+    console.log("Target: " + targetString);
+    console.log("Random: " + randomString);
+    console.log("Progre: " + progressString);
     console.log("");
 
     } while (targetString != progressString);

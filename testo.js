@@ -1,33 +1,40 @@
-// SPLICE IN MATCHING DATA
+/// BROKEN OUT FUNCTIONS
 
-console.log("TEST 10,000 x 10,000");
-console.log("2 June 2013, 12:03");
-console.log("");
+
+// This function replaces a character if a match is found
 
 function setCharAt(str,index,chr) {
     if(index > str.length-1) return str;
     return str.substr(0,index) + chr + str.substr(index+1);
 }
 
-var max_characters = 10000;
+function createTargetString(){}
 
-for (var x = 2; x < max_characters; x++){
+
+
+
+
+// SPLICE IN MATCHING DATA
+
+
+var max_string_length = 10000;
+
+for (var targetLength = 2; targetLength < max_string_length; targetLength++){
 
     // VARIABLES
 
-    var chars = " abcdefghiklmnopqrstuvwxyz";
+    var possibleCharacters = " abcdefghiklmnopqrstuvwxyz";
 
-    target = "";
+    targetString = "";
 
-    for ( var n=0; n < x; n++ ) {
+    for ( var n=0; n < targetLength; n++ ) {
 
-            var rnum = Math.floor(Math.random() * chars.length);
-            target += chars.substring(rnum,rnum+1);
+            var rnum = Math.floor(Math.random() * possibleCharacters.length);
+            targetString += possibleCharacters.substring(rnum,rnum+1);
 
             }
 
-    // var message = "hello pato he a test and this is also a test";
-    var message = target;
+
     var number_of_tests = 10000;
 
 
@@ -38,11 +45,11 @@ for (var x = 2; x < max_characters; x++){
     for (var r = 0; r < number_of_tests; r++){
 
         var randomString = "";
-        var storedString = "";
+        var progressString = "";
 
 
-        for (var c=0; c < message.length; c++) {
-            storedString = storedString + "*";
+        for (var c=0; c < targetString.length; c++) {
+            progressString = progressString + "*";
         }
 
         var counter = 0;
@@ -51,10 +58,10 @@ for (var x = 2; x < max_characters; x++){
 
         var randomString = "";
 
-        for ( var i=0; i < message.length; i++ ) {
+        for ( var i=0; i < targetString.length; i++ ) {
 
-            var rnum = Math.floor(Math.random() * chars.length);
-            randomString += chars.substring(rnum,rnum+1);
+            var rnum = Math.floor(Math.random() * possibleCharacters.length);
+            randomString += possibleCharacters.substring(rnum,rnum+1);
 
             }
 
@@ -65,23 +72,23 @@ for (var x = 2; x < max_characters; x++){
         // console.log("select: " + message);
         // console.log("random: " + randomString);
 
-        for (var p = 0; p < message.length; p++) {
+        for (var p = 0; p < targetString.length; p++) {
 
             var first_char = randomString.slice(p, p+1);
 
-            var second_char = message.slice(p, p+1);
+            var second_char = targetString.slice(p, p+1);
 
             if (first_char === second_char) {
 
-                storedString = setCharAt(storedString, p, second_char);
+                progressString = setCharAt(progressString, p, second_char);
 
                 }
 
             }
 
-        // console.log("update: " + storedString);
+        // console.log("update: " + progressString);
         // console.log("");
-        } while (message != storedString);
+        } while (targetString != progressString);
 
         // console.log(message.length + " characters");
         // console.log(counter + " generations");
@@ -104,7 +111,7 @@ for (var x = 2; x < max_characters; x++){
     // console.log("Average is " + average);
 
     var outcome = {
-        number_of_characters: x,
+        number_of_characters: targetLength,
         generations_required: average,
         array_of_results: results
         };

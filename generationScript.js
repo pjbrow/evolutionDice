@@ -84,7 +84,7 @@ var possibleCharacters = " abcdefghiklmnopqrstuvwxyz";
 
 // Variable specifies the length of the target string.
 
-var targetLength = 20;
+var targetLength = 40;
 
 targetString = createTargetString();
 
